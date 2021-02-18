@@ -32,13 +32,14 @@ jobs:
         uses: actions/setup-node@v1
       - run: | 
           npm install
-          npm run build
-        env:
-            CI: true
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: .next # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+          npm run deploy
+      #     npm run build
+      #   env:
+      #       CI: true
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@3.6.2
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     BRANCH: gh-pages # The branch the action should deploy to.
+      #     FOLDER: .next # The folder the action should deploy.
+      #     CLEAN: true # Automatically remove deleted files from the deploy branch
