@@ -35,6 +35,9 @@ jobs:
       - name: Deploy 🚀
         uses: actions/setup-node@v1
         with:
+           global: false
+           name: 'Vineeth'
+           email: 'vineethbc@gmail.com'
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run : npm run deploy
         
