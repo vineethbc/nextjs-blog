@@ -5,13 +5,12 @@
 const debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
-    exportPathMap: function () {
-        return {
-            "/": { page: "/" },
-            "/posts": { page: "/posts" },
-        }
-    },
-    //assetPrefix: '',
+    // exportPathMap: function () {
+    //     return {
+    //         //"/": { page: "/" },
+    //         //"/posts": { page: "/posts" },
+    //     }
+    // },
     assetPrefix: !debug ? '/nextjs-blog/' : '',
     webpack: (config, { dev }) => {
         // Perform customizations to webpack config
