@@ -30,11 +30,14 @@ jobs:
 
       - name: Install and Build 🔧
         uses: actions/setup-node@v1
-      - run: | 
-          npm install
-          npm run deploy
+      - run: npm install
+          
+      - name: Deploy 🚀
+        uses: actions/setup-node@v1
         with:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run : npm run deploy
+        
       #     npm run build
       #   env:
       #       CI: true
