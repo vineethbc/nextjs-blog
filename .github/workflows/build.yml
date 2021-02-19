@@ -26,9 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
-    - run: npm ci
-    - run: npm run build
-    - run: npm run export
+    - name: Install and Build 🔧
+      run: |
+        npm ci
+        npm run build
+        npm run export
+        touch ./out/.nojekyll
         
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@4.0.0
