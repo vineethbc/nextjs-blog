@@ -6,7 +6,8 @@ import Link from 'next/link'
 
 const name = 'Vineeth'
 export const siteTitle = 'Next.js Sample Website'
-const deploymentUrl = '/nextjs-blog'
+const isProd = process.env.NODE_ENV === 'production'
+const deploymentUrl = isProd ? process.env.DEPLOY_PATH : ''
 
 export default function Layout({ children, home }) {
     return (
